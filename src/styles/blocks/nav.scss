@@ -3,9 +3,9 @@
 .nav {
 
   &__list {
+    padding: 0;
     list-style: none;
     display: flex;
-    padding: 0;
   }
 
   &__item {
@@ -17,34 +17,33 @@
   }
 
   &__link {
-    display: block;
-    position: relative;
-    height: $header_height;
-    line-height: $header_height;
-    color: #000;
+    display: inline-block;
+    line-height: $header-height;
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
     font-size: 12px;
     font-weight: 500;
-    text-decoration: none;
-    text-transform: uppercase;
     white-space: nowrap;
     transition: color;
-    transition-duration: 400ms;
+    transition-duration: $smooth-changes;
 
     &:hover {
-      color: $main_color;
+      color: $main-color;
     }
 
     &--is-active {
-      color: $main_color;
-    
+      position: relative;
+      color: $main-color;
+
       &::after {
-        content: "";
-        height: 4px;
         position: absolute;
         bottom: 0;
-        right: 0;
         left: 0;
-        background-color: $main_color;
+        right: 0;
+        height: 4px;
+        content: "";
+        background-color: $main-color;
         border-radius: 2px;
       }
     }
